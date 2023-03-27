@@ -1,0 +1,28 @@
+
+<section class="section">
+    <h2>nb sushis : {{sushiBoxes.length}}</h2>
+    <table *ngIf="sushiBoxes.length > 0; else sushiEmpty" class="table is-striped center">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>image</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sushi of sushiBoxes">
+                <td>{{ sushi.nom }}</td>
+                <td>                  
+                    <img src="{{pathImage}}{{sushi.image}}">                    
+                </td>            
+            </tr>        
+        </tbody>
+        <tfoot>
+            <div style="font-weight:bold;">Nombre de boxes : {{ sushiBoxes.length }}</div>
+        </tfoot>
+    </table>
+    
+    <ng-template #sushiEmpty>
+        <p>Pas de sushi boxes ! </p>
+    </ng-template>
+    
+    </section>
