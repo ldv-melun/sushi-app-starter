@@ -9,10 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let sushi of sushiBoxes">
-                <td>{{ sushi.nom }}</td>
+            <tr *ngFor="let sushiBox of sushiBoxes">
+                <td>{{ sushiBox.nom }}</td>
                 <td>                  
-                    <img src="{{pathImage}}{{sushi.image}}">                    
+                    <img src="{{pathImage}}{{sushiBox.image}}">                    
                 </td>            
             </tr>        
         </tbody>
@@ -24,5 +24,5 @@
     <ng-template #sushiEmpty>
         <p>Pas de sushi boxes ! </p>
     </ng-template>
-    
+
     </section>

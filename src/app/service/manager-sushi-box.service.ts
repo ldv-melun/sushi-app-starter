@@ -11,8 +11,8 @@ export class ManagerSushiBoxService {
 
   constructor(private http: HttpClient) { }
 
-  public getSushiBoxes() : Observable<any> {
-    return this.http.get(environment.apiSushi)  
+  public getSushiBoxes() : Observable<IBox[]> {
+    return this.http.get<IBox[]>(environment.apiSushi)  
   }
 
 }
