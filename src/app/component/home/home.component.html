@@ -10,7 +10,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let sushiBox of sushiBoxes">
-                <td>{{ sushiBox.nom }}</td>
+                
+                <td>
+                    {{ '' // voir https://www.tektutorialshub.com/angular/angular-passing-parameters-to-route/ }}
+                    <a [routerLink]="['/box', sushiBox.id]">{{ sushiBox.nom }}</a>
+                </td>
                 <td>                  
                     <img src="{{pathImage}}{{sushiBox.image}}">                    
                 </td>            

@@ -3,6 +3,7 @@ import { ManagerSushiBoxService } from 'src/app/service/manager-sushi-box.servic
 import { environment } from 'src/environments/environment';
 import { IBox } from 'src/model/IBox';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
