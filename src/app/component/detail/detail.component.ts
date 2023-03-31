@@ -10,7 +10,7 @@ import { IBox } from 'src/model/IBox';
 })
 export class DetailComponent implements OnInit{
   
-  idBox : number = 0
+  
   boxSushi : IBox | undefined;
   
   constructor(private activatedroute:ActivatedRoute, 
@@ -20,14 +20,14 @@ export class DetailComponent implements OnInit{
  
   ngOnInit(): void {
     let id = this.activatedroute.snapshot.paramMap.get("id")
-    this.idBox = id ? Number(id) : 0  // force conversion number
-    console.log('idBox : ' + this.idBox)
+    let idBox = id ? Number(id) : 0  // force conversion number
+    console.log('idBox : ' + idBox)
 
     // on demande de nouveau toutes les boxe (pas très optimisé...) puis on ne retient que la boxe sélectionnée 
     this.managerSushiBoxservice.getSushiBoxes().subscribe(
       {
       next:(boxes: IBox[]) => {
-        this.boxSushi = boxes.find( b => b.id == this.idBox)
+        this.boxSushi = boxes.find( b => b.id == idBox)
         console.log(this.boxSushi)
       }, 
       error:er => console.log(er)
